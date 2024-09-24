@@ -59,4 +59,8 @@ public class Matrix {
         }
         return Matrix.of(minor);
     }
+
+    public String deepToString() {
+        return matrix.toString();
+    }
 }
