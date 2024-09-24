@@ -4,10 +4,10 @@ public class determinantTester
         /*  To run this on your own, creating a new Matrix requires the following syntax:
 
         Matrix nameOfMatrix = Matrix.of(new int[][] {{value}, {value}, {value}});
-        Each corresponding {} increases the row count of the 2D array, so clients can enter any size of their desired matrix.
+        Each corresponding {} increases the row count of the 2D array, so you can enter any size of your desired matrix.
 
         */
-        // Sample Tests
+        // Sample Tests; feel free to remove
         Matrix m1 = Matrix.of(new int[][] {{3, 4},{5, 7}}); 
         Matrix m2 = Matrix.of(new int[][] {{3, 4, 8},{5, 7, -9}, {9, 3, 5}}); 
         Matrix m3 = Matrix.of(new int[][] {{1, 566, 321}, {32, 4565}});
