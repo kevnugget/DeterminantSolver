@@ -36,7 +36,7 @@ public class Matrix {
         else {
             int det = 0;
             for (int col = 0; col < width; col++) {
-                det += matrix[0][col]*Math.pow(-1, (col))*findMinor(matrix, 0, col).findDeterminant(); // calculates using co-factor expansion of row 1
+                det += matrix[0][col]*Math.pow(-1, (col))*findMinor(matrix, 0, col).findDeterminant(); // calculates using co-factor expansion of first row
             }
             return det;
         }
