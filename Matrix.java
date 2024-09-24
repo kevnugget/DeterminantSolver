@@ -22,34 +22,44 @@ public class Matrix {
             throw new IllegalArgumentException("Matrix must be a square (n x n) matrix."); // undefined matrix for determinant
         }
         if (length == 1) {
-            return matrix[0][0];
+            return this.matrix[0][0];
         }
         if (length == 2) {
-            int det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]; 
-            {
-                if (det == 0) {
-                    throw new Error("Error: Determinant cannot be 0.");
-                }
-            }
+            int det = this.matrix[0][0] * this.matrix[1][1] - this.matrix[0][1] * this.matrix[1][0];
+                {
+                    if (det == 0) {
+                        throw new Error("Error: Determinant cannot be 0.");
+                    }
+                } 
             return det;
         }
         else {
             int det = 0;
             for (int col = 0; col < width; col++) {
-                det += matrix[0][col]*Math.pow(-1, (col))*findMinor(matrix, 0, col).findDeterminant(); // calculates using co-factor expansion of first row
+                det += matrix[0][col]*Math.pow(-1, (col))*findMinor(this, 0, col); // calculates using co-factor expansion of first row
             }
             return det;
         }
     }
 
-    public Matrix findMinor(int[][] inputMatrix, int row, int col) // finding the ith and jth minor of the matrix
+    public int findMinor(Matrix inputMatrix, int row, int col) // finding the ith and jth minor of the matrix
     {
+        if (inputMatrix == null || inputMatrix.length != inputMatrix.width) {
+            throw new IllegalArgumentException("Input matrix must be a square matrix.");
+        }
+
+        if (row > length || col > width || row < 0 || col < 0 || length == 1 || width == 1)
+        {
+            throw new IllegalArgumentException("Invalid Row or Column.");
+        }
+
+
         int[][] minor = new int[length - 1][width - 1];
         int r = 0, c = 0;
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < width; j++) {
                 if (i != row && j != col) {
-                    minor[r][c++] = inputMatrix[i][j];
+                    minor[r][c++] = inputMatrix.matrix[i][j];
                     if (c == width - 1) {
                         c = 0;
                         r++;
@@ -57,20 +67,18 @@ public class Matrix {
                 }
             }
         }
-        return Matrix.of(minor);
+        return Matrix.of(minor).findDeterminant();
     }
 
     public String toString() { // formatting matrix
-        String matrixString = "";
+        StringBuilder matrixString = new StringBuilder();
         for (int i = 0; i < length; i++) {
-            matrixString += "|\t";
-            for (int j = 0; j < width; j++)
-            {
-                matrixString += matrix[i][j] + "\t";
+            matrixString.append("|\t");
+            for (int j = 0; j < width; j++) {
+                matrixString.append(matrix[i][j]).append("\t");
             }
-            matrixString += "|\n";
+            matrixString.append("|\n");
         }
-
-        return matrixString;
+        return matrixString.toString();
     }
 }

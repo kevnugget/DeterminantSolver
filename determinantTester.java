@@ -9,18 +9,22 @@ public class determinantTester
         */
         // Sample Tests; feel free to remove
         Matrix m1 = Matrix.of(new int[][] {{3, 4},{5, 7}}); 
-        Matrix m2 = Matrix.of(new int[][] {{3, 4, 8},{5, 7, -9}, {9, 3, 5}}); 
-        Matrix m3 = Matrix.of(new int[][] {{1, 566, 321}, {32, 4565, 0}});
-        Matrix m4 = Matrix.of(new int[][] {{1}});
+        Matrix m2 = Matrix.of(new int[][] {{1, 566, 321}, {32, 4565, 0}});
+        Matrix m3 = Matrix.of(new int[][] {{1}});
+        Matrix m4 = Matrix.of(new int[][] {{2,3,-1,1}, {-3,2,0,3}, {3,-2,1,0}, {3, -2, 1, 4}});
+        Matrix m5 = Matrix.of(new int[][] {{1, 2},{2, 4}});
 
         System.out.println(m1.findDeterminant()); // Determinant = 1
-        System.out.println(m2.findDeterminant()); // Determinant = -622
-        // System.out.println(m3.findDeterminant()); // should throw Error
-        System.out.println(m4.findDeterminant()); // Determinant = 1
+        // System.out.println(m2.findDeterminant()); // throws Error since not square matrix
+        System.out.println(m3.findDeterminant()); // Determinant = 1
+        System.out.println(m4.findDeterminant()); // Determinant = -30
+        System.out.println(m5.findDeterminant()); // should throw Error since determinant = 0 and matrix is 2x2
 
         System.out.println(m1.toString());
         System.out.println(m2.toString());
         System.out.println(m3.toString());
-        System.out.println(m4.toString());
+        
+        System.out.println(m4.findMinor(m4, 2, 1)); // should print -30
+        System.out.println(m4.findMinor(m4, 3, 3)); // should print 13
     }
 }
