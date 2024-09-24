@@ -42,7 +42,7 @@ public class Matrix {
         }
     }
 
-    public Matrix findMinor(int[][] inputMatrix, int row, int col)
+    public Matrix findMinor(int[][] inputMatrix, int row, int col) // finding the ith and jth minor of the matrix
     {
         int[][] minor = new int[length - 1][width - 1];
         int r = 0, c = 0;
@@ -60,7 +60,17 @@ public class Matrix {
         return Matrix.of(minor);
     }
 
-    public String deepToString() {
-        return matrix.toString();
+    public String toString() { // formatting matrix
+        String matrixString = "";
+        for (int i = 0; i < length; i++) {
+            matrixString += "|\t";
+            for (int j = 0; j < width; j++)
+            {
+                matrixString += matrix[i][j] + "\t";
+            }
+            matrixString += "|\n";
+        }
+
+        return matrixString;
     }
 }
