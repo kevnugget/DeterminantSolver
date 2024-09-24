@@ -15,9 +15,9 @@ public class determinantTester
 
         System.out.println(m1.findDeterminant()); // Determinant = 1
         System.out.println(m2.findDeterminant()); // Determinant = -622
-        System.out.println(m4.findDeterminant()); // Determinant = 1
         // System.out.println(m3.findDeterminant()); // should throw Error
-        
+        System.out.println(m4.findDeterminant()); // Determinant = 1
+
         System.out.println(m1.toString());
         System.out.println(m2.toString());
         System.out.println(m3.toString());
