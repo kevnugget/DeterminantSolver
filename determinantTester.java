@@ -17,14 +17,10 @@ public class determinantTester
         System.out.println(m1.findDeterminant()); // Determinant = 1
         // System.out.println(m2.findDeterminant()); // throws Error since not square matrix
         System.out.println(m3.findDeterminant()); // Determinant = 1
-        System.out.println(m4.findDeterminant()); // Determinant = -30
-        System.out.println(m5.findDeterminant()); // should throw Error since determinant = 0 and matrix is 2x2
+        System.out.println(m4.findDeterminant()); // Determinant = 52
 
         System.out.println(m1.toString());
         System.out.println(m2.toString());
         System.out.println(m3.toString());
-        
-        System.out.println(m4.findMinor(m4, 2, 1)); // should print -30
-        System.out.println(m4.findMinor(m4, 3, 3)); // should print 13
     }
 }

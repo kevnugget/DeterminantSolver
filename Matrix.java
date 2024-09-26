@@ -26,11 +26,6 @@ public class Matrix {
         }
         if (length == 2) {
             int det = this.matrix[0][0] * this.matrix[1][1] - this.matrix[0][1] * this.matrix[1][0];
-                {
-                    if (det == 0) {
-                        throw new Error("Error: Determinant cannot be 0.");
-                    }
-                } 
             return det;
         }
         else {
