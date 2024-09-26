@@ -1,3 +1,4 @@
+package src;
 public class Matrix {
     private int[][] matrix;
     private int length, width;

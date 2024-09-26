@@ -1,3 +1,4 @@
+package src;
 public class determinantTester
 {
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class determinantTester
         // System.out.println(m2.findDeterminant()); // throws Error since not square matrix
         System.out.println(m3.findDeterminant()); // Determinant = 1
         System.out.println(m4.findDeterminant()); // Determinant = 52
+        System.out.println(m5.findDeterminant()); // Determinant = 0
 
         System.out.println(m1.toString());
         System.out.println(m2.toString());
